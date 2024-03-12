@@ -8,6 +8,7 @@ Berikut macam-macam tipe data dalam bahasa pemrograman C++ :
 1. Tipe data Primitif 
 Tipe data primitif merupakan tipe data yang telah ditentukan oleh sistem yang disediakan oleh bahasa pemrograman.
 contoh tipe data primitif:
+
 A. Int
 <br>B. Float
 <br>C. Double

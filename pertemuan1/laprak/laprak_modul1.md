@@ -8,11 +8,11 @@ Berikut macam-macam tipe data dalam bahasa pemrograman C++ :
 1. Tipe data Primitif 
 Tipe data primitif merupakan tipe data yang telah ditentukan oleh sistem yang disediakan oleh bahasa pemrograman.
 contoh tipe data primitif:
-A. Int
-B. Float
-C. Double
-D. Char
-E. Boolean
+1. Int
+2. Float
+3. Double
+4. Char
+5. Boolean
 
 2. Tipe data Abstrak
 Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer itu sendiri, tipe data ini berisi banyak tipe data sehingga nilainya lebih dari satu tipe data.
@@ -21,11 +21,11 @@ Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer 
 Tipe data koleksi merupakan tipe data yang digunakan untuk mengelompokan dan menyimpan beberapa nilai secara bersamaan.
 contoh tipe data koleksi:
 
-A. Array
+1. Array
 adalah suatu struktur yang terdiri dari sejumlah elemen yang memiliki tipe data yang sama. elemen-elemen array tersusun secara sekunsional dalam memori komputer. semua elemen array bertipe sama.
-B. Vector
+2. Vector
 vector adalah sebuah library yang ada didalam bahasa pemrograman C++
-C. Map
+3. Map
 Map mirip dengan array namun dengan index yang memungkinkan untuk berupa tipe data selain Int.
 
 ## Guided 
@@ -294,12 +294,12 @@ codingan dia atas adalah contoh penggunaan library map dalam C++. dalam program 
 
 Perbedaan Array dari Map
 
-A. Array digunakan untuk menyimpan data yang berurutan dengan ukuran yang tetap. Array menggunakan  sebuah indeks sebagai key untuk mengeksekusi nilai.
-B. Sedangkan Map digunakan untuk menyimpan data yang berpasangan (key-value) dengan ukuran yang dinamis. key di Map bisa berupa tipe data apa saja dan tidak harus berurutan.
+1. Array digunakan untuk menyimpan data yang berurutan dengan ukuran yang tetap. Array menggunakan  sebuah indeks sebagai key untuk mengeksekusi nilai.
+2. Sedangkan Map digunakan untuk menyimpan data yang berpasangan (key-value) dengan ukuran yang dinamis. key di Map bisa berupa tipe data apa saja dan tidak harus berurutan.
 
 ## Kesimpulan
 Tipe data dalam c++ terbagi menjadi 3 yaitu tipe data primitif, abstrak dan koleksi. tipe data sendiri merupakan bagian yang penting dalam pemrograman c++. dengan adanya tipe data sangat mempermudah programer untuk menyimpan dan mengelola data dalam program secara mudah dan efisien.
 
 ## Referensi
 [1] PURBASARI, Wika, et al. ALGORITMA PEMROGRAMAN. 2024.
-[2] Pratama, M. A. (2020). STRUKTUR DATA ARRAY DUA DIMENSI PADA PEMROGRAMAN C++.
+<br>[2] Pratama, M. A. (2020). STRUKTUR DATA ARRAY DUA DIMENSI PADA PEMROGRAMAN C++.

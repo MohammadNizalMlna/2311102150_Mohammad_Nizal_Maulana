@@ -8,11 +8,11 @@ Berikut macam-macam tipe data dalam bahasa pemrograman C++ :
 1. Tipe data Primitif 
 Tipe data primitif merupakan tipe data yang telah ditentukan oleh sistem yang disediakan oleh bahasa pemrograman.
 contoh tipe data primitif:
-a. Int
-b. Float
-c. Double
-d. Char
-e. Boolean
+A. Int
+B. Float
+C. Double
+D. Char
+E. Boolean
 
 2. Tipe data Abstrak
 Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer itu sendiri, tipe data ini berisi banyak tipe data sehingga nilainya lebih dari satu tipe data.
@@ -20,9 +20,13 @@ Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer 
 3. Tipe data Koleksi
 Tipe data koleksi merupakan tipe data yang digunakan untuk mengelompokan dan menyimpan beberapa nilai secara bersamaan.
 contoh tipe data koleksi:
-a. Array
-b. Vector
-c. Map
+
+A. Array
+adalah suatu struktur yang terdiri dari sejumlah elemen yang memiliki tipe data yang sama. elemen-elemen array tersusun secara sekunsional dalam memori komputer. semua elemen array bertipe sama.
+B. Vector
+vector adalah sebuah library yang ada didalam bahasa pemrograman C++
+C. Map
+Map mirip dengan array namun dengan index yang memungkinkan untuk berupa tipe data selain Int.
 
 ## Guided 
 
@@ -194,7 +198,7 @@ Mohammad Nizal Maulana - 2311102150
 #include <iostream>
 using namespace std;
 
-// Deklarasi class mahasiswa_2150 yang berisi nama string, nim int, dan tb(tunggi badan) float dalam akses public
+// Deklarasi class mahasiswa_2150 yang berisi nama string, nim int, dan tb(tinggi badan) float dalam akses public
 class Mahasiswa_2150 {
     public:
     // Data member (variabel)
@@ -289,7 +293,8 @@ int main(){
 codingan dia atas adalah contoh penggunaan library map dalam C++. dalam program ini, sebuah map tinggi_badan dengan key bertipe string dan value bertipe float digunakan untuk menyimpan data tinggi badan beberapa orang. kemudian program akan mengakses dan mencetak tinggi badan setiap orang, dan program akan diakhiri dengan mengembalikan nilai 0.
 
 Perbedaan Array dari Map
-A. Array digunakan untuk menyimpan data yang berurutan dengan ukuran yang tetap. Array menggunakan indeks sebagai key untuk mengeksekusi nilai.
+
+A. Array digunakan untuk menyimpan data yang berurutan dengan ukuran yang tetap. Array menggunakan  sebuah indeks sebagai key untuk mengeksekusi nilai.
 B. Sedangkan Map digunakan untuk menyimpan data yang berpasangan (key-value) dengan ukuran yang dinamis. key di Map bisa berupa tipe data apa saja dan tidak harus berurutan.
 
 ## Kesimpulan
@@ -297,3 +302,4 @@ Tipe data dalam c++ terbagi menjadi 3 yaitu tipe data primitif, abstrak dan kole
 
 ## Referensi
 [1] PURBASARI, Wika, et al. ALGORITMA PEMROGRAMAN. 2024.
+[2] Pratama, M. A. (2020). STRUKTUR DATA ARRAY DUA DIMENSI PADA PEMROGRAMAN C++.

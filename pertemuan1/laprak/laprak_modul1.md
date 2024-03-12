@@ -8,11 +8,11 @@ Berikut macam-macam tipe data dalam bahasa pemrograman C++ :
 1. Tipe data Primitif 
 Tipe data primitif merupakan tipe data yang telah ditentukan oleh sistem yang disediakan oleh bahasa pemrograman.
 contoh tipe data primitif:
-1. Int
-2. Float
-3. Double
-4. Char
-5. Boolean
+A. Int
+<br>B. Float
+<br>C. Double
+<br>D. Char
+<br>E. Boolean
 
 2. Tipe data Abstrak
 Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer itu sendiri, tipe data ini berisi banyak tipe data sehingga nilainya lebih dari satu tipe data.
@@ -21,12 +21,12 @@ Tipe data abstrak merupakan sebuah tipe data yang harus dibentuk oleh programer 
 Tipe data koleksi merupakan tipe data yang digunakan untuk mengelompokan dan menyimpan beberapa nilai secara bersamaan.
 contoh tipe data koleksi:
 
-1. Array
+A. Array
 adalah suatu struktur yang terdiri dari sejumlah elemen yang memiliki tipe data yang sama. elemen-elemen array tersusun secara sekunsional dalam memori komputer. semua elemen array bertipe sama.
-2. Vector
+<br>B. Vector
 vector adalah sebuah library yang ada didalam bahasa pemrograman C++
-3. Map
-Map mirip dengan array namun dengan index yang memungkinkan untuk berupa tipe data selain Int.
+<br>C. Map
+ mirip seperti array namun dengan index yang memungkinkan untuk berupa tipe data selain Int.
 
 ## Guided 
 

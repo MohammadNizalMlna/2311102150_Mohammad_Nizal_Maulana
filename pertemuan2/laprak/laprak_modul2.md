@@ -3,7 +3,37 @@
 
 ## Dasar Teori
 
-dasar teori
+Array merupakan tipe data bentukan yang digunakan untuk mendeskripsikan elemen-elemen (nilai atau variabel), yang tiap-tiap elemennya memiliki indeks.array bisa didefinisikan sebagai tipe data yang dibentuk untuk menciptakan variabel yang nilai datanya sejenis dan banyak.
+
+Jenis-jenis array:
+
+1) Array satu dimensi
+
+Array satu dimensi adalah kumpulan elemen-elemen identik yang tersususn dalam satu baris, tetapi isi dari elemen tersebut boleh berbeda. Dapat disebut juga dengan istilah vector yang menggambarkan data dalam suatu urutan.
+
+contoh array satu dimensi:
+int A[4];
+
+2) Array dua dimensi
+
+Array dua dimensi ini sering digambarkan sebagai sebuah matriks adalah perluasan dari sebuah array satu dimensi. jika array satu dimensi hanya terdiri dari sebuah baris dengan beberapa kolom elemen maka array dua dimensi terdiri dari beberapa baris dan beberapa kolom elemen yang bertipe sama.
+
+contoh array dua dimensi:
+int A[4][5];
+
+3) Array tiga dimensi
+
+Array tiga dimensi digunakan untuk mengelola data dalam  bentuk tiga dimensi atau tiga sisi.
+
+contoh array tiga dimensi:
+int A[4][5][8];
+
+4) Array Multidimensi
+
+Array multidimensi ini tidak sering terlalu sering dipakai jika dibandingkan dengan array satu dimensi, dua dimensi dan tiga dimensi. Array multidimensi ini sebenarnya sama seperti array berdimensi sebelumnya yang membedakannya ialah jumlah dimensi atau sisinya.
+
+contoh array multidimensi:
+int A[4][5][8][2][3][9];
 
 ## Guided 
 
@@ -288,4 +318,8 @@ Kode diatas merupakan sebuah program yang memungkinkan user untuk memasukkan jum
 
 ## Kesimpulan
 
+Kesimpulan dari materi tentang array ialah, bahwa array merupakan sebuah tipe data yang sangat memudahkan programer dalam memprogram. Array dapat menyimpan dan mengorganisasi data. setiap elemen pada array memiliki indeks yang memungkinkan akses langsung ke data tersebut. Pada materi ini kita juga diperlihatkan bahwa array memiliki beberapa jenis ada array satu dimensi, dua dimensi, tiga dimensi dan multidimensi. array satu dimensi hanya memiliki satu elemen saja, array dua dimensi hanya memiliki dua elemen, array tiga dimensi hanya memiliki tiga elemen, dan array multidimensi seperti namanya multi yang berarti banyak artinya array multidimensi memiliki banyak elemen didalamnya. 
+
 ## Referensi
+[1] PRATAMA, Muhammad Aldi. STRUKTUR DATA ARRAY DUA DIMENSI PADA PEMROGRAMAN C++. 2020.
+<br>[2] PRATIWI, Evi Lestari. Konsep Dasar Algoritma Dan Pemrograman Dengan Bahasa Java. Poliban Press, 2020.

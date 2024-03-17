@@ -209,7 +209,7 @@ int main(){
 
 ![SS_Output_Unguided2](Output_unguided2_Nizal2.png)
 
-deskripsi unguided 2
+Kode di atas adalah proggram input dan output dari array tiga dimensi. pertama user akan diminta memasukkan ukuran dimensi x,y dan z pada array tiga dimensi. lalu terdapat pengulangan for pada program yang digunakan user untuk menginputkan nilai tiap-tiap elemen array, terakhir program akan menampilkan data array yang telah di inputkan oleh user, dan menampilkan array nya dalam bentuk matriks.  
 
 ### 3. Buatlah program menu untuk mencari nilai Maksimum,Minimum dan Nilai rata-rata dari suatu array dengan input yang dimasukan oleh user!
 
@@ -284,7 +284,7 @@ int main(){
 
 ![SS_Output_Unguided2_Rata-rata](Output_unguided3_Nizal3.png)
 
-deskripsi unguided 3
+Kode diatas merupakan sebuah program yang memungkinkan user untuk memasukkan jumlah elemen array dan nilai indeks pada setiap elemen array. kemudian program akan menampilkan menu mencari nilai maksimum,mencari nilai minimum dan mencari nilai rata-rata yang dapat user pilih. setelah user memilih menu, program akan menjalankan menu yang dipilih oleh user dan menampilkan outputnya. jika user memasukkan pilihan yang tidak ada dimenu, program akan memberikan output pilihan anda tidak tersedia.
 
 ## Kesimpulan
 

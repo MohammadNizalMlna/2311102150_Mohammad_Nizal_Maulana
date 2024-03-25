@@ -322,7 +322,7 @@ int main()
     return 0;
 }
 ```
-deskripsi guided 1
+Kode diatas menggunakan Single Linked List non circular, dalam kode diatas, struktur data Node di definisikan untuk menyimpan data integer dan pointer yang akan menunjuk ke node berikutnya. fungsi-fungsi seperti `init()` berfungsi untuk menginisialisasi linked list, `itsEmpty()` untuk memeriksa apakah linked list kosond, `insertDepan()` untuk menambahkan elemen di depan linked list, dan fungsi-fungsi lainnya digunakan untuk operasi-operasi dasar seperti menyisipkan,menghapus,atau mengubah elemen dalam linked list. Kemudian fungsi-fungsi tersebut akan dipanggil ke dalam `main()` untuk dieksekusi.
 
 ### 2. Latihan Double Linked List
 
@@ -484,7 +484,7 @@ int main()
     return 0;
 }
 ```
-deskripsi guided 2
+Kode diatas menggunakan implementasi Double Linked List, dimana setiap node memiliki data dan dua pointer, yaitu pointer ke node prev dan ke node next. Kelas `DoublyLinkedList` menyediakan operasi dasar seperti menambah data ke depan list, menghapus data dari depan list, memperbarui data, menghapus semua data, dan menampilkan isi list. Fungsi `main()` menampilkan menu untuk user, memungkinkan mereka untuk menambah, menghapus, memperbarui, membersihkan, atau menampilkan data dalam list. Looping terus menerus meminta input pengguna dan memprosesnya sesuai dengan pilihan yang dipilih. Ini memberikan fleksibilitas dalam manipulasi data menggunakan Double Linked List.
 
 ## Unguided 
 
@@ -790,7 +790,7 @@ int main() {
 
 ![ss output unguided 1 Nizal](Nizal_output_unguided1_pt3.png)
 
-deskripsi ugu 1
+Kode ini mengimplementasikan sebuah single linked list dengan struktur `Node` yang memiliki dua variabel: `nama_150` dan `umur_150`. Terdapat pointer `next` yang menunjuk ke node berikutnya. Variabel global `head` dan `tail` menandai node pertama dan terakhir dalam linked list. Fungsi `init_150()` menginisialisasi `head` dan `tail` menjadi `NULL`. Fungsi `kosong_150()` memeriksa apakah linked list kosong dengan memeriksa apakah `head` bernilai `NULL`. Fungsi `tambahDepan_150()`, `tambahBelakang_150()`, dan `tambahTengah_150()` menambahkan data baru ke linked list. Fungsi `hapusDepan_150()`, `hapusBelakang_150()`, dan `hapusTengah_150()` menghapus data dari linked list. Fungsi-fungsi ini mengubah data pada posisi tertentu dalam linked list sesuai dengan nilai yang baru.Fungsi `ubahDepan_150()`,`ubahTengah_150()` dan `ubahBelakang_150()` digunakan untuk mengubah suatu data. Fungsi `hapusList_150()` menghapus seluruh data dalam linked list. Fungsi `tampilkan_150()` digunakan untuk menampilkan semua data dalam linked list.Dalam `main()`, program menginisialisasi linked list, pertama program akan memapilkan seluruh data dengan `tampilkan_150()`.kedua, program akan menghapus data Akechi dengan `hapusTengah_150()`. Ketiga, program akan menambahkan data Futaba(18) diantara John dan Jane dangan `tambahTengah_150()`. Keempat,program akan menambahkan data igor diatas dengan `tambahDepan_150()`. kelima program akan mengubah data Michael menjadi Reyn(18) dengan `ubahTengah_150()`. yang terakhir data yang sudah diperbaharui akan ditampilkan dengan `tampilkan_150()`.
 
 ### 2.  Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga.
 
@@ -823,8 +823,8 @@ Pada menu 7, tampilan akhirnya akan menjadi seperti dibawah ini:
 ![ss output unguided 2]()
 
 ## Kesimpulan
-
-
+Linked List merupakan sebuah struktur data dalam c++ yang memungkinkan pengelolaan data secara dinamis. Linked list merupakan sebuah kumpulan elemen yang terhubung dengan pointer, single linked list hanya memiliki satu pointer saja per elemen, dan double linked list memiliki dua pointer per elemen.[1]<br>
+keuntungan menggunakan linked list ini adalah kemampuan dalam menangani penambahan dan penghapusan sebuah elemen dengan cepat dan fleksibel. Implementasi linked list memanfaatkan manipulasi pointer dan struktur data yang efisien untuk optimalasi kinerja dan penggunaan memori dalam mengelola datset dalam jumlah yang besar.[2]
 ## Referensi
 [1] Triase, Triase. "Struktur Data: Diktat Edisi Revisi." (2020).</br>
 [2] Arraffi, Adzriel. "PENGERTIAN LINIER DALAM STRUKTUR DATA MAJEMUK." (2019).

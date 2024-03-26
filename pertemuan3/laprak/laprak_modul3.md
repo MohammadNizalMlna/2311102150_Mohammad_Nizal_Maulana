@@ -494,303 +494,423 @@ Kode diatas menggunakan implementasi Double Linked List, dimana setiap node memi
 
 ```C++
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-//Deklarasi Struct Node
-struct Node {
+// Deklarasi Struct Node
+struct Node
+{
     string nama_150;
-    int umur_150;
-    Node* next;
+    int usia_150;
+    Node *next;
 };
 
-Node* head;
-Node* tail;
+Node *head;
+Node *tail;
 
-//Inisialisasi Node
-void init_150() {
+// Inisialisasi Node
+void init_150()
+{
     head = NULL;
     tail = NULL;
 }
-// Pengecekan
-bool kosong_150() {
-    if (head == NULL)
-        return true;
-    else
-        return false;
-}
-//Tambah Depan
-void tambahDepan_150(string nama, int umur) {
-    //Buat Node baru
-    Node* baru = new Node;
-    baru->nama_150 = nama;
-    baru->umur_150 = umur;
-    baru->next = NULL;
 
-    if (kosong_150() == true) {
-        head = tail = baru;
-        tail->next = NULL;
+// Pengecekan apakah linked list kosong
+bool kosong()
+{
+    return head == NULL;
+}
+
+// Menghitung jumlah Node dalam linked list
+int listNode_150()
+{
+    Node *hitung = head;
+    int jumlah = 0;
+    while (hitung != NULL)
+    {
+        jumlah++;
+        hitung = hitung->next;
     }
-    else {
+    return jumlah;
+}
+
+// Menambahkan node di depan
+void inputdepan_150(string nama, int usia)
+{
+    // membuat Node baru
+    Node *baru = new Node;
+    baru->nama_150 = nama;
+    baru->usia_150 = usia;
+    baru->next = NULL;
+    if (kosong())
+    {
+        head = tail = baru;
+    }
+    else
+    {
         baru->next = head;
         head = baru;
     }
 }
-//Tambah Belakang
-void tambahBelakang_150(string nama, int umur) {
-    //Buat Node baru
-    Node* baru = new Node;
-    baru->nama_150 = nama;
-    baru->umur_150 = umur;
-    baru->next = NULL;
 
-    if (kosong_150() == true) {
-        head = tail = baru;
-        tail->next = NULL;
+// Menambahkan node di tengah
+void inputtengah_150(string nama, int usia, int posisi)
+{
+    if (posisi < 1 || posisi > listNode_150() + 1)
+    {
+        cout << "Posisi diluar jangkauan" << endl;
     }
-    else {
-        tail->next = baru;
-        tail = baru;
+    else if (posisi == 1)
+    {
+        inputdepan_150(nama, usia);
     }
-}
-//Hitung Jumlah List
-int hitungList_150() {
-    Node* hitung;
-    hitung = head;
-    int jumlah = 0;
-
-    while (hitung != NULL) {
-        jumlah++;
-        hitung = hitung->next;
-    }
-
-    return jumlah;
-}
-//Tambah Tengah
-void tambahTengah_150(string nama, int umur, int posisi) {
-    if (posisi < 1 || posisi > hitungList_150()) {
-        cout << "Posisi ada diluar jangkauan" << endl;
-    }
-    else if (posisi == 1) {
-        cout << "Posisi bukan posisi tengah." << endl;
-    }
-    else {
-        Node* baru, * bantu;
-        baru = new Node();
+    else
+    {
+        Node *baru = new Node();
         baru->nama_150 = nama;
-        baru->umur_150 = umur;
-
-        // tranversing
-        bantu = head;
+        baru->usia_150 = usia;
+        Node *bantu = head;
         int nomor = 1;
-
-        while (nomor < posisi - 1) {
+        while (nomor < posisi - 1)
+        {
             bantu = bantu->next;
             nomor++;
         }
-
         baru->next = bantu->next;
         bantu->next = baru;
     }
 }
-//Hapus Depan
-void hapusDepan_150() {
-    Node* hapus;
 
-    if (kosong_150() == false) {
-        if (head->next != NULL) {
-            hapus = head;
+// Menambahkan node di belakang
+void inputbelakang_150(string nama, int usia)
+{
+    // membuat Node baru
+    Node *baru = new Node;
+    baru->nama_150 = nama;
+    baru->usia_150 = usia;
+    baru->next = NULL;
+
+    if (kosong())
+    {
+        head = tail = baru;
+    }
+    else
+    {
+        tail->next = baru;
+        tail = baru;
+    }
+}
+
+// Hapus Node di depan
+void hapusDepan_150()
+{
+    if (!kosong())
+    {
+        Node *hapus = head;
+        if (head == tail)
+        {
+            head = tail = NULL;
+        }
+        else
+        {
             head = head->next;
-            delete hapus;
         }
-        else {
-            head = tail = NULL;
-        }
+        delete hapus;
     }
-    else {
-        cout << "KOSONG!" << endl;
+    else
+    {
+        cout << "Tidak ada list yang tersedia" << endl;
     }
 }
-//Hapus Belakang
-void hapusBelakanh_150() {
-    Node* hapus;
-    Node* bantu;
 
-    if (kosong_150() == false) {
-        if (head != tail) {
-            hapus = tail;
-            bantu = head;
-
-            while (bantu->next != tail) {
-                bantu = bantu->next;
-            }
-
-            tail = bantu;
-            tail->next = NULL;
-            delete hapus;
-        }
-        else {
-            head = tail = NULL;
-        }
+// Hapus Node di tengah
+void hapusTengah_150(int posisi)
+{
+    if (posisi < 1 || posisi > listNode_150())
+    {
+        cout << "Posisi diluar jangkauan" << endl;
     }
-    else {
-        cout << "KOSONG!" << endl;
+    else if (posisi == 1)
+    {
+        hapusDepan_150();
     }
-}
-//Hapus Tengah
-void hapusTengah_150(int posisi) {
-    Node* hapus, * bantu, * bantu2;
-
-    if (posisi < 1 || posisi > hitungList_150()) {
-        cout << "Posisi ada diuar jangkauan!" << endl;
-    }
-    else if (posisi == 1) {
-        cout << "Posisi bukan posisi tengah." << endl;
-    }
-    else {
+    else
+    {
+        Node *bantu = head;
         int nomor = 1;
-        bantu = head;
-
-        while (nomor <= posisi) {
-            if (nomor == posisi - 1) {
-                bantu2 = bantu;
-            }
-
-            if (nomor == posisi) {
-                hapus = bantu;
-            }
-
+        while (nomor < posisi - 1)
+        {
             bantu = bantu->next;
             nomor++;
         }
-
-        bantu2->next = bantu;
+        Node *hapus = bantu->next;
+        bantu->next = hapus->next;
         delete hapus;
     }
 }
-//Ubah Depan
-void ubahDepan_150(string nama, int umur) {
-    if (kosong_150() == false) {
-        head->nama_150 = nama;
-        head->umur_150 = umur;
-    }
-    else {
-        cout << "LIST MASIH KOSONG!" << endl;
-    }
-}
-//Ubah Tengah
-void ubahTengah_150(string nama, int umur, int posisi) {
-    Node* bantu;
-    if (kosong_150() == false) {
-        if (posisi < 1 || posisi > hitungList_150()) {
-            cout << "Posisi berada diluar jangkauan!" << endl;
+
+// Hapus Node di belakang
+void hapusBelakang_150()
+{
+    if (!kosong())
+    {
+        if (head == tail)
+        {
+            delete head;
+            head = tail = NULL;
         }
-        else if (posisi == 1) {
-            cout << "Posisi buukan posisi tengah." << endl;
-        }
-        else {
-            bantu = head;
-            int nomor = 1;
-            while (nomor < posisi) {
+        else
+        {
+            Node *bantu = head;
+            while (bantu->next != tail)
+            {
                 bantu = bantu->next;
-                nomor++;
             }
-            bantu->nama_150 = nama;
-            bantu->umur_150 = umur;
+            delete tail;
+            tail = bantu;
+            tail->next = NULL;
         }
     }
-    else {
-        cout << "KOSONG" << endl;
+    else
+    {
+        cout << "List kosong!" << endl;
     }
 }
-//Ubah Belakang
-void ubahBelakang(string nama, int umur) {
-    if (kosong_150() == false) {
+
+// Update Node di tengah
+void ubahTengah_150(string nama, int usia, int posisi)
+{
+    if (posisi < 1 || posisi > listNode_150())
+    {
+        cout << "Posisi di luar jangkauan" << endl;
+    }
+    else
+    {
+        Node *bantu = head;
+        int nomor = 1;
+        while (nomor < posisi)
+        {
+            bantu = bantu->next;
+            nomor++;
+        }
+        bantu->nama_150 = nama;
+        bantu->usia_150 = usia;
+    }
+}
+
+// Update Node di belakang
+void ubahBelakang_150(string nama, int usia)
+{
+    if (!kosong())
+    {
         tail->nama_150 = nama;
-        tail->umur_150 = umur;
+        tail->usia_150 = usia;
     }
-    else {
-        cout << "KOSONG" << endl;
+    else
+    {
+        cout << "Tidak ada list yang tersedia" << endl;
     }
 }
-//Hapus List
-void hapusList_150() {
-    Node* bantu, * hapus;
-    bantu = head;
-    while (bantu != NULL) {
-        hapus = bantu;
+
+// Hapus semua Node dalam linked list
+void hapusList_150()
+{
+    Node *bantu = head;
+    while (bantu != NULL)
+    {
+        Node *hapus = bantu;
         bantu = bantu->next;
         delete hapus;
     }
     head = tail = NULL;
-    cout << "List berhasil dihapus" << endl;
+    cout << "List berhasil terhapus!" << endl;
 }
-//Tampilkan List
-void tampilkan_150() {
-    Node* bantu;
-    bantu = head;
 
-    if (kosong_150() == false) {
-        while (bantu != NULL) {
-            cout << bantu->nama_150 << " " << bantu->umur_150 << endl;
+// Tampilkan semua Node dalam linked list
+void Tampilan_150()
+{
+    Node *bantu = head;
+    cout << left << setw(10) << "Nama" << right << setw(2) << "Usia" << endl;
+    if (!kosong())
+    {
+        while (bantu != NULL)
+        {
+            cout << left << setw(10) << bantu->nama_150 << right << setw(2) << bantu->usia_150 << endl;
             bantu = bantu->next;
         }
-
         cout << endl;
     }
-    else {
-        cout << "KOSONG!" << endl;
+    else
+    {
+        cout << "Tidak ada data yang tersedia!" << endl;
     }
 }
 
-int main() {
-    init_150(); // Inisialisasi Linked List
-     // Menjawab pertanyaan A
-    cout << "(a). Masukkan data sesuai urutan berikut. (Gunakan insert depan,belakang atau tengah). Data pertama yang dimasukkan adalah nama dan usia anda."<<endl;
-    tambahDepan_150("Karin      ", 18);
-    tambahDepan_150("Hoshino    ", 18);
-    tambahDepan_150("Akechi     ", 20);
-    tambahDepan_150("Yusuke     ", 19);
-    tambahDepan_150("Michael    ", 18);
-    tambahDepan_150("Jane       ", 20);
-    tambahDepan_150("John       ", 19);
-    tambahDepan_150("Nizal      ", 18);
-    tampilkan_150();
+int main()
+{
+    init_150();
+    cout << "single linked list" << endl;
 
-    // Menjawab pertanyaan b
-    cout << "(b). Hapus data Akechi" << endl;
-    hapusTengah_150(6);
-    tampilkan_150();
+    // Menambahkan data awal
 
-    // Menjawab pertenyaan c
-    cout << "(c). Tambahkan data Futaba 18 diantara John dan Jane" << endl;
-    tambahTengah_150("Futaba     ", 18, 3);
-    tampilkan_150();
+    inputdepan_150("Karin", 18);
+    inputdepan_150("Hoshino", 18);
+    inputdepan_150("Akechi", 20);
+    inputdepan_150("Yusuke", 19);
+    inputdepan_150("Michael", 18);
+    inputdepan_150("Jane", 20);
+    inputdepan_150("John", 19);
 
-    // Menjawab pertanyaan d
-    cout << "(d). Tambahkan data Igor 20 di awal" << endl;
-    tambahDepan_150 ("Igor       ",20);
-    tampilkan_150();
+    int pilih;
+    do
+    {
+        // Menu utama program
+        cout << "1. Tambah Data" << endl;
+        cout << "2. Hapus Data" << endl;
+        cout << "3. Update Data" << endl;
+        cout << "4. Tambah Data Urutan Tertentu" << endl;
+        cout << "5. Hapus Data Urutan Tertentu" << endl;
+        cout << "6. Hapus Seluruh Data" << endl;
+        cout << "7. Tampilkan Data" << endl;
+        cout << "8. Exit" << endl;
+        cout << "Masukkan pilihanmu: ";
+        cin >> pilih;
 
-    // Menjawab pertanyaan e 
-    cout << "(e). Ubah data Michael menjadi Reyn 18" << endl;
-    ubahTengah_150("Reyn       ", 18, 6);
-    tampilkan_150();
-
-    //Menjawab pertanyaan f
-    cout << "(f). Tampilkan seluruh data "<<endl;
-    tampilkan_150();
+        switch (pilih)
+        {
+        case 1:
+        {
+            string nama_150;
+            int usia_150;
+            cout << "Masukkan nama: ";
+            cin >> nama_150;
+            cout << "Masukkan usia: ";
+            cin >> usia_150;
+            inputdepan_150(nama_150, usia_150);
+            break;
+        }
+        case 2:
+        {
+            string namaHapus;
+            cout << "Masukkan nama data yang ingin dihapus: ";
+            cin >> namaHapus;
+            Node *temp = head;
+            int posisi = 1;
+            while (temp != NULL && temp->nama_150 != namaHapus)
+            {
+                temp = temp->next;
+                posisi++;
+            }
+            if (temp != NULL)
+            {
+                hapusTengah_150(posisi);
+                cout << "Data dengan nama " << namaHapus << " berhasil dihapus." << endl;
+            }
+            else
+            {
+                cout << "Data dengan nama " << namaHapus << " tidak ditemukan." << endl;
+            }
+            break;
+        }
+        case 3:
+        {
+            string namaLama, namaBaru;
+            int usiaBaru;
+            cout << "Masukkan nama yang ingin diupdate: ";
+            cin >> namaLama;
+            cout << "Masukkan nama baru: ";
+            cin >> namaBaru;
+            cout << "Masukkan usia baru: ";
+            cin >> usiaBaru;
+            Node *temp = head;
+            int posisi = 1;
+            while (temp != NULL && temp->nama_150 != namaLama)
+            {
+                temp = temp->next;
+                posisi++;
+            }
+            if (temp != NULL)
+            {
+                ubahTengah_150(namaBaru, usiaBaru, posisi);
+            }
+            else
+            {
+                cout << "Data tidak ditemukan" << endl;
+            }
+            break;
+        }
+        case 4:
+        {
+            string nama, namabaru;
+            int usia;
+            cout << "Masukkan nama: ";
+            cin >> nama;
+            cout << "Masukkan usia: ";
+            cin >> usia;
+            cout << "Masukkan nama setelah data baru: ";
+            cin >> namabaru;
+            Node *temp = head;
+            int posisi = 1;
+            while (temp != NULL && temp->nama_150 != namabaru)
+            {
+                temp = temp->next;
+                posisi++;
+            }
+            if (temp != NULL)
+            {
+                inputtengah_150(nama, usia, posisi + 1);
+            }
+            else
+            {
+                cout << "Data tidak ditemukan" << endl;
+            }
+            break;
+        }
+        case 5:
+        {
+            int posisi;
+            cout << "Masukkan posisi data yang ingin dihapus: ";
+            cin >> posisi;
+            hapusTengah_150(posisi);
+            break;
+        }
+        case 6:
+        {
+            hapusList_150();
+            break;
+        }
+        case 7:
+        {
+            Tampilan_150();
+            break;
+        }
+        case 8:
+        {
+            cout << "Terima kasih telah menggunakan program ini!" << endl;
+            break;
+        }
+        default:
+        {
+            cout << "Pilihan tidak valid" << endl;
+            break;
+        }
+        }
+    } while (pilih != 8);
 
     return 0;
 }
 ```
 #### Output:
 ![ss output unguided 1 Nizal](Nizal_output_unguided1_pt1.png)
-
 ![ss output unguided 1 Nizal](Nizal_output_unguided1_pt2.png)
-
 ![ss output unguided 1 Nizal](Nizal_output_unguided1_pt3.png)
+![ss output unguided 1 Nizal](Nizal_output_unguided1_pt4.png)
+![ss output unguided 1 Nizal](Nizal_output_unguided1_pt5.png)
+![ss output unguided 1 Nizal](Nizal_output_unguided1_pt6.png)
 
-Kode ini mengimplementasikan sebuah single linked list dengan struktur `Node` yang memiliki dua variabel: `nama_150` dan `umur_150`. Terdapat pointer `next` yang menunjuk ke node berikutnya. Variabel global `head` dan `tail` menandai node pertama dan terakhir dalam linked list. Fungsi `init_150()` menginisialisasi `head` dan `tail` menjadi `NULL`. Fungsi `kosong_150()` memeriksa apakah linked list kosong dengan memeriksa apakah `head` bernilai `NULL`. Fungsi `tambahDepan_150()`, `tambahBelakang_150()`, dan `tambahTengah_150()` menambahkan data baru ke linked list. Fungsi `hapusDepan_150()`, `hapusBelakang_150()`, dan `hapusTengah_150()` menghapus data dari linked list. Fungsi-fungsi ini mengubah data pada posisi tertentu dalam linked list sesuai dengan nilai yang baru.Fungsi `ubahDepan_150()`,`ubahTengah_150()` dan `ubahBelakang_150()` digunakan untuk mengubah suatu data. Fungsi `hapusList_150()` menghapus seluruh data dalam linked list. Fungsi `tampilkan_150()` digunakan untuk menampilkan semua data dalam linked list.Dalam `main()`, program menginisialisasi linked list, pertama program akan memapilkan seluruh data dengan `tampilkan_150()`.kedua, program akan menghapus data Akechi dengan `hapusTengah_150()`. Ketiga, program akan menambahkan data Futaba(18) diantara John dan Jane dangan `tambahTengah_150()`. Keempat,program akan menambahkan data igor diatas dengan `tambahDepan_150()`. kelima program akan mengubah data Michael menjadi Reyn(18) dengan `ubahTengah_150()`. yang terakhir data yang sudah diperbaharui akan ditampilkan dengan `tampilkan_150()`.
+Kode ini merupakan implementasi dari struktur data single linked list yang dimodifikas. Linked list adalah Program ini menggunakan struct `Node` untuk mendefinisikan elemen-elemen dalam linked list, yang terdiri dari nama dan usia. Program menyediakan beberapa operasi dasar untuk linked list seperti menambahkan node di depan, di tengah, dan di belakang, menghapus node, mengupdate node, serta menampilkan seluruh isi linked list.
+Fungsi-fungsi utama dalam program ini meliputi `inputdepan_150`, `inputtengah_150`, `inputbelakang_150` untuk menambahkan node, `hapusDepan_150`, `hapusTengah_150`, `hapusBelakang_150` untuk menghapus node, `ubahTengah_150` dan `ubahBelakang_150` untuk mengupdate node, serta `Tampilan_150` untuk menampilkan isi linked list. Selain itu, program juga memiliki fungsi utilitas seperti `kosong` untuk memeriksa apakah linked list kosong, dan `listNode_150` untuk menghitung jumlah node dalam linked list.
+Di dalam fungsi `main`, program memberikan menu utama kepada pengguna untuk melakukan operasi-operasi tersebut. Pengguna dapat menambahkan, menghapus, mengupdate, dan menampilkan isi linked list sesuai dengan pilihannya. Program akan terus berjalan hingga pengguna memilih untuk keluar.
 
 ### 2.  Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga.
 

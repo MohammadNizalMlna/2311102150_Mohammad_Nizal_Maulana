@@ -3,11 +3,11 @@
 
 ## Dasar Teori
 
-Hash Table adalah sebuah struktur data yang sangat cepat dalam insertion dan searchig. Hash Table diimplementasikan menggunakan array. Penambahan dan pencarian sebuah key pada hash table berdasarkan fungsi hash yang dipakai. fungsi hash memetakkan elemen pada indeks hash table. Fungsi hash yang baik memiliki sifat berikut : mudah dihitung, cukup mampu mendistribusikan key, meminimalkan jumlah collision (tabrakan) yang terjadi. Fungsi hash dapat menggunakan beberapa teknik, diantaranya :
+Hash Table adalah sebuah struktur data yang sangat cepat dalam insertion dan searchig. Hash Table diimplementasikan menggunakan array. Penambahan dan pencarian sebuah key pada hash table berdasarkan fungsi hash yang dipakai. fungsi hash memetakkan elemen pada indeks hash table. Fungsi hash yang baik memiliki sifat berikut : mudah dihitung, cukup mampu mendistribusikan key, meminimalkan jumlah collision (tabrakan) yang terjadi. Fungsi hash dapat menggunakan beberapa teknik, diantaranya :</br>
 a. Truncatio. Mengambil beberapa digit dari key sebagai indeks.</br>
 b. Folding. Menjumlahkan beberapa digit dari key, hasil penjumlahan sebagai indeks</br>
 c. Modular. Menggunakan sisa hasil bagi dari key (bilangan bulat) dengan ukuran hash table.</br>
-Hash Table menggunakan memori penyimpanan utama berbentuk array dengan tambahan algoritma untuk mempercepat pemrosesan data. beberapa hal yang perlu diperhatikan dalam membuat hash function adalah :
+Hash Table menggunakan memori penyimpanan utama berbentuk array dengan tambahan algoritma untuk mempercepat pemrosesan data. beberapa hal yang perlu diperhatikan dalam membuat hash function adalah :</br>
 a. ukuran array/table size</br>
 b. key value/nilai yang didapat dari data </br>
 c. hash value/hash indeks/indeks yang dituju.

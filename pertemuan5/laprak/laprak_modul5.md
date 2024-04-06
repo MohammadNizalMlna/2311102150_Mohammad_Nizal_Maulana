@@ -424,20 +424,28 @@ int main(){
 #### Output:
 ![Unguided 1](gambar/unguided1_Tampilan_menu_awal.png)
 gambar tampilan menu awal program
+
 ![Unguided 1](gambar/unguided1_TambahData_Nizal.png)
 menambah data Nizal
+
 ![Unguided 1](gambar/unguided1_TambahData_Renji.png)
 menambah data Renji
+
 ![Unguided 1](gambar/unguided1_TambahData_Ichigo.png)
 menambah data Ichigo
+
 ![Unguided 1](gambar/unguided1_TambahData_Toshiro.png)
 menambah data Toshiro
+
 ![Unguided 1](gambar/unguided1_HapusData_2200098134.png)
 Hapus data 2200098134 (Renji)
+
 ![Unguided 1](gambar/unguided1_CariDataNIM.png)
-Mencari data berdasarkan NIM 
+Mencari data berdasarkan NIM
+
 ![Unguided 1](gambar/unguided1_cariData_rentangNilai.png)
 Mencari data berdasarkan rentang nilai(80 - 90)
+
 ![Unguided 1](gambar/unguided1_keluar.png)
 Tampilan keluar
 

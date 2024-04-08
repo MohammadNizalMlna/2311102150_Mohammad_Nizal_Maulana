@@ -342,6 +342,17 @@ class HashTable{
         return result;
     }
 
+    //Fungsi menampilkan semua data
+    void tampilkan_150(){
+        cout << "Data Mahasiswa yang ada dalam Hash Table : "<<endl;
+        for(int i = 0; i < TABLE_SIZE; i++){
+            for (size_t j = 0; j < table[i].size(); j++){
+                Mahasiswa* mhs = &(table[i][j]->data);
+                cout << "Nama Mahasiswa: " << mhs->nama_150 << "\tNIM: " << mhs->nim_150 << "\tNilai: " << mhs->nilai_150 << endl;
+            }
+        }
+    }
+
 };
 
 int main(){
@@ -353,13 +364,15 @@ int main(){
     cout << "1. Tambah data Mahasiswa"<<endl;
     cout << "2. Hapus data Mahasiswa"<<endl;
     cout << "3. Cari data Mahasiswa berdasarkan NIM"<<endl;
-    cout << "4. Cari data Mahasiswa berdsarkan rentang nilai(80 - 90)"<<endl;
-    cout << "5. Keluar"<<endl;
+    cout << "4. Cari data Mahasiswa berdsarkan rentang nilai"<<endl;
+    cout << "5. Tampilkan semua data"<<endl;
+    cout << "6. Keluar"<<endl;
     cout << "Pilih menu diatas : "; cin >> pilih_150;
     cout << endl;
 
     switch(pilih_150){
         case 1 :{
+            // menambahkan data mahasiswa
             Mahasiswa mhs;
             cout << "-TAMBAH DATA MAHASISWA-"<<endl;
             cout << "Masukkan Nama Mahasiswa : ";
@@ -373,15 +386,18 @@ int main(){
             break;
         }
         case 2 :{
+            // menghapus data mahasiswa
             string nim;
             cout << "-HAPUS DATA MAHASISWA-"<<endl;
             cout << "Masukkan NIM untuk menghapus data Mahasiswa : ";
             cin >> nim;
             hashTable_150.hapus_150(nim);
+            cout << "Data Mahasiswa dengan NIM " << nim << " telah dihapus"<<endl;
             goto menu;
             break;
         }
         case 3 :{
+            // Mencari data mahasiswa berdasarkan NIM
             string nim;
             cout << "-CARI DATA MAHASISWA BERDASARKAN NIM-"<<endl;
             cout << "Masukkan NIM untuk mencari data Mahasiswa: ";
@@ -397,8 +413,12 @@ int main(){
             break;
         }
         case 4 :{
-            int minNilai = 80, maxNilai = 90;
-            cout << "-CARI DATA MAHASISWA BERDASARKAN RENTANG NILAI (80 - 90)" <<endl;
+            // mencari data mahasiswa berdasarkan rentang nilai (rentang nilai diinputkan user)
+            int minNilai , maxNilai ;
+            cout << "Tentukan rentang nilai yang ingin dicari!"<<endl;
+            cout << "Nilai minimal : "; cin >> minNilai;
+            cout << "Nilai maksimal : "; cin >> maxNilai;
+            cout << "Rentang nilai yang dicari " << minNilai << " sampai " << maxNilai << endl;
             vector<Mahasiswa*> result = hashTable_150.searchBYRange(minNilai, maxNilai);
             if(result.size() > 0){
                 cout << "Data mahasiswa dalam rentang nilai " << minNilai << " hingga " << maxNilai << ":\n";
@@ -411,46 +431,39 @@ int main(){
             goto menu;
             break;
         }
-        case 5:
-            cout << "Anda keluar dari program"<<endl;
+        case 5 :{
+            // menampilkan seluruh data dalam hash table
+            hashTable_150.tampilkan_150();
+            goto menu;
             break;
-        default:
-            cout << "pilihan tidak ada dalam menu";
+        }
+        case 6 :
+            cout << "Anda keluar dari program!"<<endl;
+            break;
+        default :
+            cout << "Pilihan anda tidak ada didalam menu "<<endl;
             goto menu;
     }
     return 0;
 }
 ```
 #### Output:
-![Unguided 1](gambar/unguided1_Tampilan_menu_awal.png)
-gambar tampilan menu awal program
+![Unguided 1](gambar/output_unguided1_1.png)
+![Unguided 1](gambar/output_unguided1_2.png)
+![Unguided 1](gambar/output_unguided1_3.png)
+![Unguided 1](gambar/output_unguided1_4.png)
+![Unguided 1](gambar/output_unguided1_5.png)
+![Unguided 1](gambar/output_unguidded1_6.png)
 
-![Unguided 1](gambar/unguided1_TambahData_Nizal.png)
-menambah data Nizal
-
-![Unguided 1](gambar/unguided1_TambahData_Renji.png)
-menambah data Renji
-
-![Unguided 1](gambar/unguided1_TambahData_Ichigo.png)
-menambah data Ichigo
-
-![Unguided 1](gambar/unguided1_TambahData_Toshiro.png)
-menambah data Toshiro
-
-![Unguided 1](gambar/unguided1_HapusData_2200098134.png)
-Hapus data 2200098134 (Renji)
-
-![Unguided 1](gambar/unguided1_CariDataNIM.png)
-Mencari data berdasarkan NIM
-
-![Unguided 1](gambar/unguided1_cariData_rentangNilai.png)
-Mencari data berdasarkan rentang nilai(80 - 90)
-
-![Unguided 1](gambar/unguided1_keluar.png)
-Tampilan keluar
-
-Kode diatas mengimpletasikan penggunaan Hash Table sederhana. Struktur data utama yang digunakan `Mahasiswa`, yang mencakup informasi nama,NIM dan nilai mahasiswa. Kemudian terdapat struktur `HashNode` yang mereplesentasikan setiap node dalam hash table, yang memiliki data mahasiswa serta pointer ke node berikutnya. Class `HashTable` menyediakan operasi-operasi dasar untuk memanipulasi data dalam hash table.metode `insert_150` digunakan untuk memasukkan data mahasiswa ke dalam table hash dengan menggunakan fungsi hash untuk menentukan indeksnya. metode `hapus_150` digunakan untuk menghapus data mahasiswa berdasarkan NIM yang diinputkan user. meetode `searchByNIM` digunakan untuk mencari data mahasiswa berdasarkan NIM, mettode `searchByRange` digunakan untuk mencari data mahasiswa berdasarkan rentang nilai yang ditentukan.
-pada fungsi `main()` disajikan menu-menu menambah mahasiswa,meghapus data, mencari data berdasarkan NIM, mencari data berdasarkan rentang nilai (80 - 90), dan keluar. 
+Kode diatas mengimpletasikan penggunaan Hash Table sederhana. Struktur hash table digunakan untuk mempercepat pencarian,penambahan dan penghapusan data berdasarkan kunci, dalam kode tersebut kuncinya adalah NIM.
+Pada kode tersebut, terdapat definisi struct `Mahasiswa` yang menyimpan informasi nama, NIM, dan nilai dari seorang mahasiswa. Selanjutnya, terdapat struct `HashNode` yang merupakan simpul dalam hash table, yang berisi data mahasiswa dan pointer ke simpul berikutnya. Kemudian, ada class `HashTable` yang merupakan implementasi dari hash table itu sendiri. Kelas ini memiliki array dari vektor table, di mana setiap vektor menyimpan simpul-simpul yang berisi data mahasiswa.
+Metode-metode yang didefinisikan dalam kelas HashTable meliputi
+`insert_150`: Menambahkan data mahasiswa ke dalam hash table dengan menggunakan fungsi hash untuk menentukan indeks di mana data akan disimpan.
+`hapus_150`: Menghapus data mahasiswa berdasarkan NIM.
+`searchByNIM`: Mencari data mahasiswa berdasarkan NIM.
+`searchBYRange`: Mencari data mahasiswa berdasarkan rentang nilai yang ditentukan oleh user.
+`tampilkan_150`: Menampilkan semua data mahasiswa yang ada dalam hash table.
+Dalam fungsi `main()`, terdapat penggunaan menu yang memberikan opsi kepada pengguna untuk melakukan operasi-operasi yang telah didefinisikan pada class `HashTable`. user memilih opsi yang diinginkan, seperti menambahkan data mahasiswa, menghapus data mahasiswa, mencari data berdasarkan NIM, mencari data berdasarkan rentang nilai, menampilkan semua data, atau keluar dari program. Setiap pilihan akan memanggil metode yang sesuai pada objek `hashTable_150` yang telah dibuat sebelumnya.
 
 ## Kesimpulan
 Hash Table merupakan sebuah struktur data efisien yang menggunakan fungsi hash untuk menyimpan dan mengakses data dengan cepat [1].</br>

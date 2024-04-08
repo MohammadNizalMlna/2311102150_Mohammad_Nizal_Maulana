@@ -77,6 +77,17 @@ class HashTable{
         return result;
     }
 
+    //Fungsi menampilkan semua data
+    void tampilkan_150(){
+        cout << "Data Mahasiswa yang ada dalam Hash Table : "<<endl;
+        for(int i = 0; i < TABLE_SIZE; i++){
+            for (size_t j = 0; j < table[i].size(); j++){
+                Mahasiswa* mhs = &(table[i][j]->data);
+                cout << "Nama Mahasiswa: " << mhs->nama_150 << "\tNIM: " << mhs->nim_150 << "\tNilai: " << mhs->nilai_150 << endl;
+            }
+        }
+    }
+
 };
 
 int main(){
@@ -88,13 +99,15 @@ int main(){
     cout << "1. Tambah data Mahasiswa"<<endl;
     cout << "2. Hapus data Mahasiswa"<<endl;
     cout << "3. Cari data Mahasiswa berdasarkan NIM"<<endl;
-    cout << "4. Cari data Mahasiswa berdsarkan rentang nilai(80 - 90)"<<endl;
-    cout << "5. Keluar"<<endl;
+    cout << "4. Cari data Mahasiswa berdsarkan rentang nilai"<<endl;
+    cout << "5. Tampilkan semua data"<<endl;
+    cout << "6. Keluar"<<endl;
     cout << "Pilih menu diatas : "; cin >> pilih_150;
     cout << endl;
 
     switch(pilih_150){
         case 1 :{
+            // menambahkan data mahasiswa
             Mahasiswa mhs;
             cout << "-TAMBAH DATA MAHASISWA-"<<endl;
             cout << "Masukkan Nama Mahasiswa : ";
@@ -108,6 +121,7 @@ int main(){
             break;
         }
         case 2 :{
+            // menghapus data mahasiswa
             string nim;
             cout << "-HAPUS DATA MAHASISWA-"<<endl;
             cout << "Masukkan NIM untuk menghapus data Mahasiswa : ";
@@ -118,6 +132,7 @@ int main(){
             break;
         }
         case 3 :{
+            // Mencari data mahasiswa berdasarkan NIM
             string nim;
             cout << "-CARI DATA MAHASISWA BERDASARKAN NIM-"<<endl;
             cout << "Masukkan NIM untuk mencari data Mahasiswa: ";
@@ -133,8 +148,12 @@ int main(){
             break;
         }
         case 4 :{
-            int minNilai = 80, maxNilai = 90;
-            cout << "-CARI DATA MAHASISWA BERDASARKAN RENTANG NILAI (80 - 90)" <<endl;
+            // mencari data mahasiswa berdasarkan rentang nilai (rentang nilai diinputkan user)
+            int minNilai , maxNilai ;
+            cout << "Tentukan rentang nilai yang ingin dicari!"<<endl;
+            cout << "Nilai minimal : "; cin >> minNilai;
+            cout << "Nilai maksimal : "; cin >> maxNilai;
+            cout << "Rentang nilai yang dicari " << minNilai << " sampai " << maxNilai << endl;
             vector<Mahasiswa*> result = hashTable_150.searchBYRange(minNilai, maxNilai);
             if(result.size() > 0){
                 cout << "Data mahasiswa dalam rentang nilai " << minNilai << " hingga " << maxNilai << ":\n";
@@ -147,11 +166,17 @@ int main(){
             goto menu;
             break;
         }
-        case 5:
-            cout << "Anda keluar dari program"<<endl;
+        case 5 :{
+            // menampilkan seluruh data dalam hash table
+            hashTable_150.tampilkan_150();
+            goto menu;
             break;
-        default:
-            cout << "pilihan tidak ada dalam menu";
+        }
+        case 6 :
+            cout << "Anda keluar dari program!"<<endl;
+            break;
+        default :
+            cout << "Pilihan anda tidak ada didalam menu "<<endl;
             goto menu;
     }
     return 0;

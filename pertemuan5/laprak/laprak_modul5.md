@@ -466,8 +466,7 @@ Metode-metode yang didefinisikan dalam kelas HashTable meliputi
 Dalam fungsi `main()`, terdapat penggunaan menu yang memberikan opsi kepada pengguna untuk melakukan operasi-operasi yang telah didefinisikan pada class `HashTable`. user memilih opsi yang diinginkan, seperti menambahkan data mahasiswa, menghapus data mahasiswa, mencari data berdasarkan NIM, mencari data berdasarkan rentang nilai, menampilkan semua data, atau keluar dari program. Setiap pilihan akan memanggil metode yang sesuai pada objek `hashTable_150` yang telah dibuat sebelumnya.
 
 ## Kesimpulan
-Hash Table merupakan sebuah struktur data efisien yang menggunakan fungsi hash untuk menyimpan dan mengakses data dengan cepat [1].</br>
-Hash Table membutuhkan lebih banyak memori dan bisa mengalami masalah jika implementasinya tidak tepat, meskipun demikian, hash table tetaplah pilihan yang populer untuk berbagai aplikasi yang menggunakan penyimpanan dan pencarian data cepat [2].
+Hash Table merupakan salah satu struktur data yang penting dalam bahasa pemrograman C++. Sebab hash table menyediakan cara yang efisien untuk menyimpan dan mengakses data dengan menggunakan teknik hashing. Teknik ini mengkonversi key data menjadi indeks menggunakan fungsi hash, sehingga memungkinkan mengakses data dengan waktu yang cepat. Salah satu keunggulan hash table ialah kemampuannya dalam menangani pencarian dengan cepat dan efisien khususnya pada data yang besar atau berjumlah banyak, ketika sebuah key diberikan, hash table dapat mengembalikan nilai sesuai dalam waktu yang cepat. Namun dalam penggunaanya hash table juga memiliki beberapa kekurangan seperti masalah pada hash yang dapat terjadi jika kedua key meghasilkan sebuah indeks yang sama.
 
 ## Referensi
 [1] Holle, K. F. H. (2022). Modul praktikum struktur data.</br>

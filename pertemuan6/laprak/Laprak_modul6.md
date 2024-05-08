@@ -4,7 +4,7 @@
 ## Dasar Teori
 
 Stack adalah suatu tumpukan dari benda. Konsep utama nya adalah LFO (Last in First Out), yaitu benda yang terakhir masuk dalam stack akan menjadi benda pertama yang dikeluarkan oleh stack.
-![gambar1](gambar/gambar1.png)
+![gambar1](gambar/gambar1.png)</br>
 Pada gambar diatas, jika kita ingin mengambil sesuatu dari tumpukan, maka kita harus mengambil benda paling atas terlebih dahulu, yakni compo. Apabila VCD langsung diambil, maka compo akan jatuh. Prinsip stack ini dapat diterapkan dalam pemrograman. Di C++, ada dua cara penerapan stack yakni dengan array dan linked list.
 setidaknya, stack harus memiliki operasi-operasi sebagai berikut: 
 - Push = Untuk menambahkan item pada tumpukan paling atas.
@@ -12,12 +12,12 @@ setidaknya, stack harus memiliki operasi-operasi sebagai berikut:
 - Clear = untuk mengosongkan stacck.
 - IsEmpty = Memeriksa apakah stack kosong.
 - IsFull = Untuk memeriksa apakah stack penuh.
-- Retrieve = Untuk mendapatkan nilai dari item teratas.
-Operasi-operasi dasar stack
+- Retrieve = Untuk mendapatkan nilai dari item teratas.</br>
+Operasi-operasi dasar stack</br>
 Operasi dasar pada stack sebagai berikut:
 - CREATESTACK(S): Membuat tumpukan baru S dengan jumlah elemen kosong.
 - MAKENULL(S): Mengosongkan tumpukan S jika ada elemen maka semua elemen dihapus.
-- EMPTY: menguji apakah tumpukan kosong/
+- EMPTY: menguji apakah tumpukan kosong
 - PUSH(x,S): Memasukkan elemen baru x ke dalam tumpukan S
 - POP(S): mengeluarkan elemen posisi atas pada tumpukan S.
 ![gambar2](gambar/gambar2.png)

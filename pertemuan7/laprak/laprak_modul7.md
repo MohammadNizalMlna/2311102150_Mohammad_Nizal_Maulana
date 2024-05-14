@@ -4,7 +4,9 @@
 ## Dasar Teori
 
 Antrean atau QUEUE adalah salah satu struktur data yang memiliki sistem kerja yang dimana pertama masuk maka akan menjadi yang pertama keluar (FIFO = First In First Out), sama halnya seperti antrian di dunia nyata. Namun hal ini tidak berlaku pada antrian berprioritas. Sebab, pada antrian berprioritas, urutan keluar dari sebuah antrian ditentukan berdasarkan prioritas masing-masing elemen dalam antrian terlebih dahulu. Pada sebuah antrian, elemen hanya dapat ditambahkan melalui sisi belakang queue dan hanya bisa diambil dari sisi depan queue. Oleh sebab itu ada dua dua buah  elemen pada sebuah queue, yaitu belakang (last atau rear) sebagai penunjuk paling belakang dan depan (first atau front) sebagai elemen bagian depan. Sama seperti stack dan list queue juga merupakan struktur data yang dapat di implementasikan menggunakan array dan pointer.
+
 ![ss_dasar_teori](gambar/ssDasarteori1.png)
+
 Pendeklarasian Queue </br>
 dengan struct dan array
 ```C++

@@ -27,13 +27,13 @@ int main() {
     char input[100];
     cin.getline(input, 100);
 
-    // Convert the input char array to an int array
+    // mengkonvert char array ke int array
     int i = 0;
     while (input[i] != '\0') {
         masukankalimat[i] = input[i];
         i++;
     }
-    masukankalimat[i] = '\0'; // Null terminator for the int array
+    masukankalimat[i] = '\0'; // null terminator untuk int array
 
     int hitungHurufVokal_150 = hitungVokal_SequentialSearch_150(masukankalimat, cariHurufVokal, IndexVokal);
 

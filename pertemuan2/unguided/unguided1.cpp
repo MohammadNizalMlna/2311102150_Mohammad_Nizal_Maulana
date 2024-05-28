@@ -20,7 +20,7 @@ int main(){
     cout << endl;
     // Output Data Array
     cout << "Data Array = ";
-    for(int i=0; i<panjangArray_150;i++){
+    for(int i=0; i<panjangArray_150;i++){   
         cout << Elemen_150[i] << " "<<ends;
     }
     cout << endl;
